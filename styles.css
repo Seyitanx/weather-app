@@ -1,0 +1,45 @@
+h1 {
+  font-family: "Oswald", sans-serif;
+  color: dimgray;
+}
+ul{
+  font-family: "Oswald", sans-serif;
+  color: dimgray;
+  list-style: none;
+}
+.card-title {
+  font-family: "PT Mono", monospace;
+}
+.cloud-icon {
+  font-size: 100px;
+  color:white;
+  
+}
+.back-card{
+    background-color: rgb(161, 152, 152);
+}
+.button{
+    padding: 2px;
+    border: 2px solid dimgray;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 200ms ease-in-out;
+}
+.button:hover{
+    background-color: dimgray;
+    color: white;
+    cursor: pointer;
+    
+}
+.second{
+  padding: 2px;
+  border: 2px solid dimgray;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 200ms ease-in-out;
+}
+.second:hover{
+  background-color: dimgray;
+  color: white;
+  cursor: pointer;
+}
