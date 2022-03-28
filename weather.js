@@ -19,12 +19,13 @@ function newDate(date) {
 let now = new Date();
 let timeDate = document.querySelector("#the-date");
 timeDate.innerHTML = newDate(now);
-
+//this function is to ensure the city name returns after input in the search form
 function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#current-city");
   let searchInput = document.querySelector("#search-input");
   city.innerHTML = searchInput.value;
+  //added an API to the function to bring the city's weather in real time
   let appiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric`;
   let appKey = "766d0f1b246ebf2848cd1e96c9ac9190";
   axios.get(`${appiUrl}&appid=${appKey}`).then(getLocation);
@@ -41,7 +42,7 @@ function getLocation(response) {
   let weather = document.querySelector("#cloud-description");
   weather.innerHTML = response.data.weather[0].description;
 }
-//bonus feature which incolved adding an extra button
+//bonus feature which incolved adding an extra button to show the current location
 function showLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
