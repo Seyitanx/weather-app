@@ -42,7 +42,7 @@ function getLocation(response) {
   let weather = document.querySelector("#cloud-description");
   weather.innerHTML = response.data.weather[0].description;
 }
-//bonus feature which incolved adding an extra button to show the current location
+//bonus feature which incolved adding an extra button
 function showLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -55,6 +55,7 @@ function getPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
 }
+
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getPosition);
