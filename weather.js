@@ -25,11 +25,11 @@ function searchCity(event) {
   let city = document.querySelector("#current-city");
   let searchInput = document.querySelector("#search-input");
   city.innerHTML = searchInput.value;
-  //added an API to the function to bring the city's weather in real time
   let appiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric`;
   let appKey = "766d0f1b246ebf2848cd1e96c9ac9190";
   axios.get(`${appiUrl}&appid=${appKey}`).then(getLocation);
 }
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
