@@ -19,6 +19,7 @@ function newDate(date) {
 let now = new Date();
 let timeDate = document.querySelector("#the-date");
 timeDate.innerHTML = newDate(now);
+
 //this function is to ensure the city name returns after input in the search form
 function searchCity(event) {
   event.preventDefault();
@@ -30,8 +31,7 @@ function searchCity(event) {
   axios.get(`${appiUrl}&appid=${appKey}`).then(getLocation);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCity);
+
 
 function getLocation(response) {
   let currentCity = document.querySelector("#current-city");
@@ -41,6 +41,14 @@ function getLocation(response) {
   currentDegree.innerHTML = `${temperature}℃ Now`;
   let weather = document.querySelector("#cloud-description");
   weather.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+}
+
+function searchButton(city) {
+  let appiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+  let appKey = "766d0f1b246ebf2848cd1e96c9ac9190";
+  axios.get(`${appiUrl}&appid=${appKey}`).then(getLocation);
 }
 //bonus feature which incolved adding an extra button
 function showLocation(position) {
@@ -56,6 +64,9 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getPosition);
+searchButton("lagos")
