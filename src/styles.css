@@ -17,6 +17,9 @@ ul{
 }
 .back-card{
     background-color: rgb(161, 152, 152);
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 20px;
 }
 .button{
     padding: 2px;
