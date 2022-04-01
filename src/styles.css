@@ -2,6 +2,7 @@ h1 {
   font-family: "Oswald", sans-serif;
   color: dimgray;
   font-weight: 100;
+  margin-bottom: 5px;
 }
 li {
   font-family: "Oswald", sans-serif;
@@ -24,12 +25,12 @@ ul {
 }
 .back-card {
   background-color: rgb(161, 152, 152);
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid white;
   padding: 20px;
 }
 .card-cover {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   margin-top: 30px;
 }
 .button {
