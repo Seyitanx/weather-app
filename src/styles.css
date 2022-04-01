@@ -1,11 +1,19 @@
 h1 {
   font-family: "Oswald", sans-serif;
   color: dimgray;
+  font-weight: 100;
 }
-ul{
+li{
   font-family: "Oswald", sans-serif;
   color: dimgray;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 16px;
+}
+ul{
+  padding: 0;
+  margin: 0;
 }
 .card-title {
   font-family: "PT Mono", monospace;
