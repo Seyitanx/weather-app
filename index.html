@@ -39,34 +39,34 @@
               class="button"
               id="new-button"
             />
-            <button 
-              type="button" 
-              class="second"
-              id="current-button"
-            >Show current location
+            <button type="button" class="second" id="current-button">
+              Show current location
             </button>
           </form>
           <h1 id="current-city"></h1>
           <div class="row">
             <div class="col-6">
-            <ul>
-              <li id="current-degree"></li>
-              <li id= "cloud-description" ></li>
-              <li id="the-date"></li> 
-            </ul>
+              <div class="weather-temperature">
+                  <ul>
+                <li><strong id="current-degree"></strong><span class="units"> ℃</span></li>
+                <li id="cloud-description"></li>
+                <li id="the-date"></li>
+              </ul>
+              </div>
+              
             </div>
             <div class="col-6">
-            <ul>
-<li>Humidity: <span id="humidity"></span>%</li>
-<li>Percipitation: <span id="percipitation"></span>%</li>
-<li>Wind: <span id="wind"></span>k/h</li>
-            </ul>
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Percipitation: <span id="percipitation"></span>%</li>
+                <li>Wind: <span id="wind"></span>k/h</li>
+              </ul>
             </div>
           </div>
 
           <i class="fa-solid fa-cloud-sun cloud-icon"></i>
           <div class="row">
-            <div class="col-sm-4" style="width: 15rem;">
+            <div class="col-sm-4" style="width: 15rem">
               <div class="card">
                 <div class="card-body body-card">
                   <h5 class="card-title">Friday</h5>
@@ -75,7 +75,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-4" style="width: 15rem;">
+            <div class="col-sm-4" style="width: 15rem">
               <div class="card">
                 <div class="card-body body-card">
                   <h5 class="card-title">Saturday</h5>
@@ -84,7 +84,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-4" style="width: 15rem;">
+            <div class="col-sm-4" style="width: 15rem">
               <div class="card">
                 <div class="card-body body-card">
                   <h5 class="card-title">Sunday</h5>
@@ -93,7 +93,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-4" style="width: 15rem;">
+            <div class="col-sm-4" style="width: 15rem">
               <div class="card">
                 <div class="card-body body-card">
                   <h5 class="card-title">Monday</h5>
@@ -104,13 +104,14 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
     <script src="src/weather.js"></script>
-    <footer class="newlink"><a href="https://github.com/Seyitanx/weather-app" target="blank"> open-source code </a> <small> by oluwaseyitan</small></footer> 
-
-    
-    
-   
+    <footer class="newlink">
+      <a href="https://github.com/Seyitanx/weather-app" target="blank">
+        open-source code
+      </a>
+      <small> by oluwaseyitan</small>
+    </footer>
   </body>
 </html>

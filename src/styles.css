@@ -2,7 +2,7 @@ h1 {
   font-family: "Oswald", sans-serif;
   color: dimgray;
   font-weight: 100;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 li {
   font-family: "Oswald", sans-serif;
@@ -60,4 +60,10 @@ ul {
 .newlink {
   color: dimgray;
   text-align: center;
+}
+
+.weather-temperature strong {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 400;
 }

@@ -38,7 +38,7 @@ function getLocation(response) {
   let temperature = Math.round(response.data.main.temp);
   currentCity.innerHTML = response.data.name;
   let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = `${temperature}℃ Now`;
+  currentDegree.innerHTML = `${temperature}`;
   let weather = document.querySelector("#cloud-description");
   weather.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
