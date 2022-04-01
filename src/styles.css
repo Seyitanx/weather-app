@@ -3,7 +3,7 @@ h1 {
   color: dimgray;
   font-weight: 100;
 }
-li{
+li {
   font-family: "Oswald", sans-serif;
   color: dimgray;
   list-style: none;
@@ -11,7 +11,7 @@ li{
   margin: 0;
   font-weight: 16px;
 }
-ul{
+ul {
   padding: 0;
   margin: 0;
 }
@@ -20,41 +20,43 @@ ul{
 }
 .cloud-icon {
   font-size: 100px;
-  color:white;
-  
+  color: white;
 }
-.back-card{
-    background-color: rgb(161, 152, 152);
-    margin: 30px auto;
-    border-radius: 10px;
-    padding: 20px;
+.back-card {
+  background-color: rgb(161, 152, 152);
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 20px;
 }
-.button{
-    padding: 2px;
-    border: 2px solid dimgray;
-    border-radius: 10px;
-    background-color: white;
-    transition: all 200ms ease-in-out;
+.card-cover {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
-.button:hover{
-    background-color: dimgray;
-    color: white;
-    cursor: pointer;
-    
-}
-.second{
+.button {
   padding: 2px;
   border: 2px solid dimgray;
   border-radius: 10px;
   background-color: white;
   transition: all 200ms ease-in-out;
 }
-.second:hover{
+.button:hover {
   background-color: dimgray;
   color: white;
   cursor: pointer;
 }
-.newlink{
+.second {
+  padding: 2px;
+  border: 2px solid dimgray;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 200ms ease-in-out;
+}
+.second:hover {
+  background-color: dimgray;
+  color: white;
+  cursor: pointer;
+}
+.newlink {
   color: dimgray;
- text-align: center; 
+  text-align: center;
 }
