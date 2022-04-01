@@ -67,3 +67,13 @@ ul {
   line-height: 1;
   font-weight: 400;
 }
+.weather-temperature .units{
+position: relative;
+top: -13px;
+font-size: 15px;
+}
+.faraheint{
+  color: dimgray;
+  text-decoration: none;
+}
+  
