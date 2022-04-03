@@ -1,6 +1,9 @@
-function newDate(date) {
+function newDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours =  now.getHours;
+  let minutes =  now.getMinutes;
   let days = [
-    "Suday",
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
@@ -8,17 +11,12 @@ function newDate(date) {
     "Friday",
     "Saturday",
   ];
-
-  let currentTime = ("0" + now.getHours()).slice(-2);
-  let currentDay = days[now.getDay()];
-  let currentMins = ("0" + now.getMinutes()).slice(-2);
-  let fullDate = `${currentDay} ${currentTime}:${currentMins}`;
-  return fullDate;
+let day = days[date.getDay()];
+return `${day} ${hours}:${minutes}`;
+   
 }
 
-let now = new Date();
-let timeDate = document.querySelector("#the-date");
-timeDate.innerHTML = newDate(now);
+
 
 //this function is to ensure the city name returns after input in the search form
 function searchCity(event) {
@@ -45,6 +43,8 @@ function getLocation(response) {
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
   wind.innerHTML= Math.round(response.data. wind.speed);
+  let date = document.querySelector("the-date")
+  date.innerHTML = newDate(response.data.dt * 1000);
 }
 
 function searchButton(city) {
