@@ -43,6 +43,8 @@ function getLocation(response) {
   weather.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML= Math.round(response.data. wind.speed);
 }
 
 function searchButton(city) {
