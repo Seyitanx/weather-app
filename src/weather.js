@@ -1,7 +1,13 @@
 function newDate(timestamp) {
   let now = new Date(timestamp);
-  let hours =  now.getHours;
-  let minutes =  now.getMinutes;
+  let hours = now.getHours();
+   if (hours < 10) {
+     hours = `0${hours}`;
+   }
+   let minutes = now.getMinutes();
+   if (minutes < 10) {
+     minutes = `0${minutes}`;
+   };
   let days = [
     "Sunday",
     "Monday",
@@ -11,12 +17,9 @@ function newDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-let day = days[date.getDay()];
-return `${day} ${hours}:${minutes}`;
-   
+  let day = days[now.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-
-
 
 //this function is to ensure the city name returns after input in the search form
 function searchCity(event) {
@@ -29,8 +32,6 @@ function searchCity(event) {
   axios.get(`${appiUrl}&appid=${appKey}`).then(getLocation);
 }
 
-
-
 function getLocation(response) {
   let currentCity = document.querySelector("#current-city");
   let temperature = Math.round(response.data.main.temp);
@@ -42,8 +43,8 @@ function getLocation(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML= Math.round(response.data. wind.speed);
-  let date = document.querySelector("the-date")
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let date = document.querySelector("#the-date");
   date.innerHTML = newDate(response.data.dt * 1000);
 }
 
@@ -71,4 +72,4 @@ form.addEventListener("submit", searchCity);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getPosition);
-searchButton("lagos")
+searchButton("lagos");
