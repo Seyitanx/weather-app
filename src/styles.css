@@ -31,8 +31,15 @@ ul {
   font-family: "PT Mono", monospace;
 }
 .cloud-icon {
-  font-size: 100px;
+  text-shadow: 2px 2px 2px dimgray;
+  font-size: 50px;
   color: white;
+  position: relative;
+  padding: 0px 30px;
+  bottom: 50px;
+  left: 80px;
+  height: 50px;
+  width: 50px;
 }
 .back-card {
   background-color: rgb(161, 152, 152);
@@ -74,7 +81,7 @@ ul {
 }
 
 .weather-temperature strong {
-  font-size: 30px;
+  font-size: 35px;
   line-height: 1;
   font-weight: 400;
 }
