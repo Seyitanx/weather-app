@@ -32,12 +32,12 @@ ul {
 }
 .cloud-icon {
   text-shadow: 2px 2px 2px dimgray;
-  font-size: 50px;
+  font-size: 45px;
   color: white;
   position: relative;
   padding: 0px 30px;
-  bottom: 50px;
-  left: 80px;
+  bottom: 120px;
+  left: 100px;
   height: 50px;
   width: 50px;
 }
