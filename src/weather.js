@@ -1,13 +1,13 @@
 function newDate(timestamp) {
   let now = new Date(timestamp);
   let hours = now.getHours();
-   if (hours < 10) {
-     hours = `0${hours}`;
-   }
-   let minutes = now.getMinutes();
-   if (minutes < 10) {
-     minutes = `0${minutes}`;
-   };
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -35,17 +35,23 @@ function searchCity(event) {
 function getLocation(response) {
   let currentCity = document.querySelector("#current-city");
   let temperature = Math.round(response.data.main.temp);
-  currentCity.innerHTML = response.data.name;
   let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = `${temperature}`;
   let weather = document.querySelector("#cloud-description");
-  weather.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
   let date = document.querySelector("#the-date");
+  let icon = document.querySelector("#icon");
+  currentCity.innerHTML = response.data.name;
+  currentDegree.innerHTML = `${temperature}`;
+  weather.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
   date.innerHTML = newDate(response.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchButton(city) {

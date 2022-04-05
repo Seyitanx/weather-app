@@ -15,8 +15,7 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
-  
-  font-weight: 16px;
+  font-size: 20px;
   font-weight: 100;
   line-height: 19px;
 }
@@ -31,21 +30,20 @@ ul {
   font-family: "PT Mono", monospace;
 }
 .cloud-icon {
-  text-shadow: 2px 2px 2px dimgray;
-  font-size: 45px;
-  color: white;
+  
   position: relative;
   padding: 0px 30px;
-  bottom: 115px;
-  left: 100px;
-  height: 50px;
-  width: 50px;
+  bottom: 90px;
+  right: 10px;
+ 
+
 }
 .back-card {
   background-color: rgb(161, 152, 152);
   border-radius: 5px;
   border: 1px solid white;
   padding: 20px;
+  max-width: 1000px;
 }
 .card-cover {
   margin-bottom: 0px;
@@ -81,13 +79,14 @@ ul {
 }
 
 .weather-temperature strong {
-  font-size: 35px;
+  font-size: 40px;
   line-height: 1;
   font-weight: 400;
+  margin-left: 90px;
 }
 .weather-temperature .units{
 position: relative;
-top: -13px;
+top: -20px;
 font-size: 15px;
 }
 .faraheint{
