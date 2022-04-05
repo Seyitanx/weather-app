@@ -39,9 +39,9 @@ ul {
 
 }
 .back-card {
-  background-color: rgb(161, 152, 152);
+  background-color: rgb(136, 136, 136);
   border-radius: 5px;
-  border: 1px solid white;
+  border: 5px solid white;
   padding: 20px;
   max-width: 1000px;
 }
