@@ -39,7 +39,7 @@ ul {
 
 }
 .back-card {
-  background-color: rgb(136, 136, 136);
+  background: linear-gradient(#dacbcb, #1c2042););
   border-radius: 5px;
   border: 5px solid white;
   padding: 20px;
@@ -52,7 +52,7 @@ ul {
 .button {
   padding: 2px;
   border: 2px solid dimgray;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
   transition: all 200ms ease-in-out;
 }
@@ -64,7 +64,7 @@ ul {
 .second {
   padding: 2px;
   border: 2px solid dimgray;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
   transition: all 200ms ease-in-out;
 }
@@ -87,10 +87,17 @@ ul {
 .weather-temperature .units{
 position: relative;
 top: -20px;
-font-size: 15px;
+font-size: 20px;
+font-weight: 100;
 }
 .faraheint{
   color: dimgray;
   text-decoration: none;
+  
+}
+.celsius{
+  color: dimgray;
+  text-decoration: none;
+  
 }
   

@@ -34,15 +34,17 @@ function searchCity(event) {
 
 function getLocation(response) {
   let currentCity = document.querySelector("#current-city");
-  let temperature = Math.round(response.data.main.temp);
   let currentDegree = document.querySelector("#current-degree");
   let weather = document.querySelector("#cloud-description");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let date = document.querySelector("#the-date");
   let icon = document.querySelector("#icon");
+
+celsiusTemperature=response.data.main.temp;
+
   currentCity.innerHTML = response.data.name;
-  currentDegree.innerHTML = `${temperature}`;
+  currentDegree.innerHTML =  Math.round(celsiusTemperature);
   weather.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
@@ -73,9 +75,31 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
+
+function showFahrenheitTemperture(event) {
+  event.preventDefault();
+  let fahrenheitTemp= (celsiusTemperature * 9) /5 + 32;
+  let currentDegree = document.querySelector("#current-degree")
+  currentDegree.innerHTML= Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemperture(event) {
+  event.preventDefault();
+  let currentDegree = document.querySelector("#current-degree");
+  currentDegree.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getPosition);
+
+let fahrenheit = document.querySelector("#faraheint-link");
+fahrenheit.addEventListener("click", showFahrenheitTemperture)
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", showCelsiusTemperture);
+
 searchButton("lagos");
