@@ -21,15 +21,16 @@ function newDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
-  let forcast = document.querySelector("#forecast");
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = document.querySelector("#forecast");
 
-  let forcastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row">`;
 let days = ["sat", "sun", "mon","tue","wed"];
 days.forEach(function(day){
 
-forcastHTML =
-    forcastHTML +
+forecastHTML =
+    forecastHTML +
     `
             <div class="col-sm-4" style="width: 10rem">
               <div class="card">
@@ -41,13 +42,18 @@ forcastHTML =
               </div>
             </div>
   `;
-  
+}
+) 
+  forecastHTML = forecastHTML + `<div>`;
+  forecast.innerHTML = forecastHTML;
 }
 
-)
-  
-  forcastHTML = forcastHTML + `<div>`;
-  forcast.innerHTML = forcastHTML;
+
+function getForecast(coordinates) {
+  console.log(coordinates)
+  let appkey = "766d0f1b246ebf2848cd1e96c9ac9190";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${appkey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //this function is to ensure the city name returns after input in the search form
@@ -83,6 +89,8 @@ function getLocation(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
+getForecast(response.data.coord);
 }
 
 function searchButton(city) {
@@ -131,4 +139,4 @@ let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsiusTemperture);
 
 searchButton("lagos");
-displayForecast();
+
