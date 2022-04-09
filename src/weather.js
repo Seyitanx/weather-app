@@ -21,6 +21,35 @@ function newDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forcast = document.querySelector("#forecast");
+
+  let forcastHTML = `<div class="row">`;
+let days = ["sat", "sun", "mon","tue","wed"];
+days.forEach(function(day){
+
+forcastHTML =
+    forcastHTML +
+    `
+            <div class="col-sm-4" style="width: 10rem">
+              <div class="card">
+                <div class="card-body" >
+                  <h5 class="card-day">${day}</h5>
+                  <p class="card-temperature">34℃</p>
+                  <p>🌤</p>
+                </div>
+              </div>
+            </div>
+  `;
+  
+}
+
+)
+  
+  forcastHTML = forcastHTML + `<div>`;
+  forcast.innerHTML = forcastHTML;
+}
+
 //this function is to ensure the city name returns after input in the search form
 function searchCity(event) {
   event.preventDefault();
@@ -41,10 +70,10 @@ function getLocation(response) {
   let date = document.querySelector("#the-date");
   let icon = document.querySelector("#icon");
 
-celsiusTemperature=response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
 
   currentCity.innerHTML = response.data.name;
-  currentDegree.innerHTML =  Math.round(celsiusTemperature);
+  currentDegree.innerHTML = Math.round(celsiusTemperature);
   weather.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
@@ -75,12 +104,11 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
-
 function showFahrenheitTemperture(event) {
   event.preventDefault();
-  let fahrenheitTemp= (celsiusTemperature * 9) /5 + 32;
-  let currentDegree = document.querySelector("#current-degree")
-  currentDegree.innerHTML= Math.round(fahrenheitTemp);
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let currentDegree = document.querySelector("#current-degree");
+  currentDegree.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function showCelsiusTemperture(event) {
@@ -97,9 +125,10 @@ let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getPosition);
 
 let fahrenheit = document.querySelector("#faraheint-link");
-fahrenheit.addEventListener("click", showFahrenheitTemperture)
+fahrenheit.addEventListener("click", showFahrenheitTemperture);
 
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsiusTemperture);
 
 searchButton("lagos");
+displayForecast();
