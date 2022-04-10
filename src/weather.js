@@ -133,19 +133,6 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
-function showFahrenheitTemperture(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function showCelsiusTemperture(event) {
-  event.preventDefault();
-  let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = Math.round(celsiusTemperature);
-}
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
@@ -153,11 +140,6 @@ form.addEventListener("submit", searchCity);
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getPosition);
 
-let fahrenheit = document.querySelector("#faraheint-link");
-fahrenheit.addEventListener("click", showFahrenheitTemperture);
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", showCelsiusTemperture);
 
 searchButton("lagos");
 
