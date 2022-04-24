@@ -39,8 +39,6 @@ return days[day];
 }
 
 
-
-
 function displayForecast(response) {
   let newForecast= response.data.daily;
 
