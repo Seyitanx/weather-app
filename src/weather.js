@@ -47,11 +47,11 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
 newForecast.forEach(function(forecastDay, index){
-if (index < 7){
+if (index < 6){
 forecastHTML =
   forecastHTML +
   `
-            <div class="col-sm-4" style="width: 8rem">
+            <div class="col-sm-2" style="width: 8rem">
               <div class="card">
                 <div class="card-body" >
                   <h5 class="card-day">${displayDay(forecastDay.dt)}</h5>
