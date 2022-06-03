@@ -96,7 +96,7 @@ function getLocation(response) {
   let icon = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
-
+console.log(response);
   currentCity.innerHTML = response.data.name;
   currentDegree.innerHTML = Math.round(celsiusTemperature);
   weather.innerHTML = response.data.weather[0].description;
